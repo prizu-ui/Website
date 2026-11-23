@@ -1,3 +1,4 @@
+
 // Event formats (the kind of event). An event's optional "format" (src/data/chapters/*.json) must
 // be exactly one of these; scripts/validate-events.mjs checks that before each build. Shown as a
 // small label on cards; the filters use the tags in eventTags.js instead.
@@ -5,9 +6,9 @@
 // load it too.
 export const EVENT_FORMATS = ['Conference', 'Workshop', 'Hackathon', 'Speaker Night', 'Meetup']
 
-// Where "Add it with a pull request" on the All events page points: the Add an event guide.
-// One place to change it.
-export const ADD_EVENT_URL = 'https://github.com/renisha18/sheBuildsTN/blob/main/docs/add-event.md'
+// Where "Add it with a pull request" on the All events page points: the GitHub repository.
+ // One place to change it.
+export const ADD_EVENT_URL = 'https://github.com/shebuilds-tn/SheBuilds-website'
 
 // Shown when there are no upcoming events
 export const INSTAGRAM_URL = 'https://www.instagram.com/shebuilds_chennai/'

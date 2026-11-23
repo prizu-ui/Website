@@ -1,7 +1,6 @@
 import HeroBadges from './HeroBadges.jsx'
 import CharacterLoop from '../../components/CharacterLoop.jsx'
 import '../../components/CharacterArt.css'
-import { scrollToSection } from '../../siteSections.js'
 import SocialLinks from '../../components/SocialLinks.jsx'
 
 function Hero() {
@@ -18,25 +17,26 @@ function Hero() {
               Tamilnadu
             </span>
           </h1>
+
           <p className="font-body text-muted text-base md:text-lg" data-reveal>
-           
           </p>
+
           <div data-reveal>
             <a
-              href="#join"
-              onClick={(e) => {
-                e.preventDefault()
-                scrollToSection('join')
-              }}
+              href="https://chat.whatsapp.com/HIMc0a2cYliIEDqTgmETOX"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-block font-body font-semibold text-ink bg-accent border-2 border-ink rounded-full px-6 py-3 shadow-brutal transition motion-reduce:transition-none active:translate-x-0.5 active:translate-y-0.5 active:shadow-brutal-sm"
             >
               Join the community <span aria-hidden="true">→</span>
             </a>
           </div>
+
           {/* Same links as the footer. mt-4 + the column's gap-4 = the 32px between the headline
               and the button (which has two gap-4s around the empty paragraph) */}
           <SocialLinks nav className="mt-4" />
         </div>
+
         {/* character-art keeps the slot's size and spacing; CharacterLoop fills it */}
         <div className="character-art" data-reveal>
           <CharacterLoop
@@ -46,6 +46,7 @@ function Hero() {
             priority
           />
         </div>
+
         <HeroBadges />
       </div>
     </section>

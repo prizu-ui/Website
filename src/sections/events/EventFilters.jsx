@@ -1,3 +1,4 @@
+
 import { EVENT_TAGS, tagLabel } from './eventTags.js'
 import { chapterChoices, cityChoices } from './locationFilter.js'
 import ThemedSelect from '../../components/ThemedSelect.jsx'
@@ -30,7 +31,7 @@ export function EventFilters({ query, setQuery, selectedTags, toggleTag, clearTa
       <button type="button" aria-pressed={selectedTags.length === 0} onClick={clearTags} className={`${pillClass(selectedTags.length === 0)} ${PHONE_PILL_CLASS}`}>
         All
       </button>
-      {EVENT_TAGS.filter(({ id }) => availableTags.includes(id)).map(({ id, label, description }) => {
+      {EVENT_TAGS.filter(({ id }) => id !== 'community' && availableTags.includes(id)).map(({ id, label, description }) => {
         const isActive = selectedTags.includes(id)
         return (
           <button

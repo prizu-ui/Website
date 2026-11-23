@@ -1,3 +1,4 @@
+
 import logo from '../assets/logo.jpeg'
 import { sections, scrollToSection } from '../siteSections.js'
 import BlockGame from './BlockGame.jsx'
@@ -40,11 +41,12 @@ function Footer() {
             </ul>
           </nav>
 
-          {/* Same style as the Hero's "Join the community" button */}
+          {/* Join the WhatsApp community */}
           <a
-            href="#join"
-            onClick={(e) => go(e, 'join')}
-            className="rounded-full border-2 border-ink bg-accent px-6 py-3 font-body font-semibold text-ink shadow-brutal transition motion-reduce:transition-none active:translate-x-0.5 active:translate-y-0.5 active:shadow-brutal-sm focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink"
+            href="https://chat.whatsapp.com/HIMc0a2cYliIEDqTgmETOX"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block font-body font-semibold text-ink bg-accent border-2 border-ink rounded-full px-6 py-3 shadow-brutal transition motion-reduce:transition-none active:translate-x-0.5 active:translate-y-0.5 active:shadow-brutal-sm"
           >
             Join the community <span aria-hidden="true">→</span>
           </a>
@@ -52,7 +54,7 @@ function Footer() {
           <SocialLinks lift />
 
           <p className="order-last w-full border-t border-muted/30 pt-4 font-body text-sm text-muted lg:order-none">
-            © SheBuilds Tamil Nadu 
+            © SheBuilds Tamil Nadu
           </p>
         </div>
 
