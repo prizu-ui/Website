@@ -1,11 +1,15 @@
+
 import { useEffect, useRef, useState } from 'react'
 import './Stats.css'
 
-// Update these numbers when they change.
+// Official SheBuilds impact statistics.
 const STATS = [
-  { value: 1500, suffix: '+', label: 'Members in Chennai', tone: 'coral' },
-  { value: 13, suffix: '', label: 'Events hosted', tone: 'teal' },
-  { value: new Date().getFullYear() - 2019, suffix: '', label: 'Years of building', note: 'Since 2019', tone: 'yellow' },
+  { value: 10000, suffix: '+', label: 'Community Members', tone: 'coral' },
+  { value: 5, suffix: '', label: 'Regional Chapters', tone: 'teal' },
+  { value: 50000, suffix: '+', label: 'Challenge Participations', tone: 'yellow' },
+  { value: 45, suffix: '+', label: 'In-Person Meetups', tone: 'coral' },
+  { value: 500, suffix: '+', label: 'Projects Built', tone: 'teal' },
+  { value: 12, prefix: '₹', suffix: 'L', label: 'Grant Support', tone: 'yellow' },
 ]
 
 const DURATION_MS = 1200
@@ -25,7 +29,7 @@ export default function Stats() {
     const observer = new IntersectionObserver(
       (entries) => {
         if (!entries[0].isIntersecting) return
-        observer.disconnect() // count up once only
+        observer.disconnect()
         const start = performance.now()
         const tick = (now) => {
           const t = Math.min((now - start) / DURATION_MS, 1)
@@ -50,17 +54,17 @@ export default function Stats() {
       <ul className="stats__list">
         {STATS.map((s) => {
           const shown = progress === null ? s.value : Math.round(s.value * progress)
+
           return (
             <li key={s.label} className={`stats__block stats__block--${s.tone}`}>
               <span className="stats__number" aria-hidden="true">
-                {format(shown)}{s.suffix}
+                {s.prefix ?? ''}{format(shown)}{s.suffix}
               </span>
               <span className="sr-only">
-                {format(s.value)}{s.suffix} {s.label}{s.note ? `, ${s.note}` : ''}
+                {s.prefix ?? ''}{format(s.value)}{s.suffix} {s.label}
               </span>
               <span className="stats__meta" aria-hidden="true">
                 <span className="stats__label">{s.label}</span>
-                {s.note && <span className="stats__note">{s.note}</span>}
               </span>
             </li>
           )

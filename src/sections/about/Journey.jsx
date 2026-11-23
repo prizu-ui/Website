@@ -1,29 +1,62 @@
+
 import { useEffect, useRef, useState } from 'react'
 import TimelineItem from './TimelineItem.jsx'
 import './Journey.css'
 
-// Card colours are theme tokens (index.css @theme), including the illustration colours.
+// Official SheBuilds journey milestones, arranged chronologically.
 const milestones = [
-  { year: '2019', title: 'The Beginning', color: 'var(--color-yellow)',
-    description: 'Five friends started a WhatsApp group to share job leads and CSS tips. Nobody expected what came next.' },
-  { year: '2020', title: 'First Meetup', color: 'var(--color-accent)',
-    description: 'Twenty-three women showed up to a borrowed conference room in Nungambakkam. The WiFi failed. Nobody left.' },
-  { year: '2021', title: '100 Members', color: 'var(--color-accent-alt)',
-    description: 'Crossed the triple digits, launched a Slack workspace, and held the first all-women hackathon.' },
-  { year: '2022', title: 'First Conference', color: 'var(--color-lavender)',
-    description: 'SheBuilds Conf 2022 — 200 attendees, 14 speakers, one legendary after-party at the Marina beachfront' },
-  { year: '2023', title: '300 Members', color: 'var(--color-orange)',
-    description: 'Added mentorship tracks, a job board, and a monthly newsletter read by 1,200+ subscribers.' },
-  { year: '2024', title: 'Growing Together', color: 'var(--color-green)',
-    description: 'Partnered with 12 companies for hiring pipelines, launched a scholarship fund, and kept growing.' },
-  { year: '2025', title: 'Scaling Impact', color: 'var(--color-coral-red)',
-    description: 'Paving the way to grow across Chennai — more chapters, more cities, more women who build.' },
-  { year: '2026', title: "What's Next", color: 'var(--color-yellow)',
-    description: 'More women, more builders, more impact. The journey continues.' },
+  {
+    year: '2024',
+    title: 'The Beginning',
+    color: 'var(--color-yellow)',
+    description:
+      'Launched SheBuilds in March with our first large-scale tech meetup and women-centric fellowship hackathon, creating inclusive spaces for women in STEM.',
+  },
+  {
+    year: '2024',
+    title: 'Beyond One City',
+    color: 'var(--color-accent)',
+    description:
+      'Launched Code & Connect 1.0 in September across six cities, bringing emerging technologies, industry mentorship, and hands-on learning closer to women builders.',
+  },
+  {
+    year: '2025',
+    title: 'Community to Ecosystem',
+    color: 'var(--color-accent-alt)',
+    description:
+      'Evolved into an interconnected ecosystem of students, professionals, mentors, and founders, bridging skills with careers, collaboration, and entrepreneurship.',
+  },
+  {
+    year: '2025',
+    title: 'Building Beyond Skills',
+    color: 'var(--color-lavender)',
+    description:
+      'Expanded Code & Challenge through hackathons and innovation sprints, introduced Candid Saga to amplify founder journeys, and initiated Catalyst to connect emerging women founders with mentorship, networks, and funding opportunities.',
+  },
+  {
+    year: '2026',
+    title: 'North Meets South',
+    color: 'var(--color-orange)',
+    description:
+      'Expanded beyond Delhi with Chennai and Bengaluru chapters in January, strengthening SheBuilds’ presence across North and South India.',
+  },
+  {
+    year: '2026',
+    title: 'The Foundation Era',
+    color: 'var(--color-green)',
+    description:
+      'Incorporated as a Section 8 nonprofit in March. Hosted founder gatherings, a women’s empowerment run, and Mompreneur conversations. Launched Shepreneur in July and grew to five chapters across Delhi, Chennai, Bengaluru, Pune, and Chandigarh by November, with 10,000+ members, 500+ projects, and ₹12L in grants.',
+  },
+  {
+    year: '2027',
+    title: 'The Global Vision',
+    color: 'var(--color-coral-red)',
+    description:
+      'Taking SheBuilds international with a dedicated SheBuilds Impact Fund, structured fellowships, and stronger global partnerships to scale women’s leadership worldwide.',
+  },
 ]
 
-// Gap between years. Each rail segment also takes this long to reach the next
-// diamond, so the line arrives exactly as the next year fades in.
+// Gap between milestones.
 const STEP_MS = 1000
 const TOTAL = milestones.length
 
@@ -33,8 +66,10 @@ const prefersReducedMotion = () =>
 // `character` = optional node (illustration) for the reserved bottom-right slot.
 export default function Journey({ character = null }) {
   const timelineRef = useRef(null)
-  // Reduced motion starts fully revealed, so no observer and no timers ever run.
-  const [revealed, setRevealed] = useState(() => (prefersReducedMotion() ? TOTAL : 0))
+  // Reduced motion starts fully revealed.
+  const [revealed, setRevealed] = useState(() =>
+    prefersReducedMotion() ? TOTAL : 0,
+  )
 
   // Start once the timeline scrolls into view.
   useEffect(() => {
@@ -46,18 +81,16 @@ export default function Journey({ character = null }) {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (!entry.isIntersecting) return
-        setRevealed(1) // 2019 appears immediately
+        setRevealed(1)
         observer.disconnect()
       },
-      // fires once the top has cleared the bottom 20% of the viewport
       { rootMargin: '0px 0px -20% 0px' },
     )
     observer.observe(node)
     return () => observer.disconnect()
   }, [])
 
-  // Then one more year every STEP_MS. A single timer at a time: StrictMode's
-  // double-invoke schedules, clears, and reschedules without skipping a year.
+  // Reveal one milestone at a time.
   useEffect(() => {
     if (revealed === 0 || revealed >= TOTAL) return
     const id = setTimeout(() => setRevealed((c) => c + 1), STEP_MS)
@@ -70,13 +103,19 @@ export default function Journey({ character = null }) {
       aria-labelledby="journey-heading"
       style={{ '--step': `${STEP_MS}ms` }}
     >
-      <h2 id="journey-heading" className="about__heading journey__heading" data-reveal>Journey</h2>
+      <h2
+        id="journey-heading"
+        className="about__heading journey__heading"
+        data-reveal
+      >
+        Our Journey
+      </h2>
 
       <div className="journey__timeline" ref={timelineRef}>
         <ol className="journey__list">
           {milestones.map((item, i) => (
             <TimelineItem
-              key={item.year}
+              key={`${item.year}-${i}`}
               data={item}
               isRevealed={i < revealed}
               position={i % 2 === 0 ? 'up' : 'down'}
@@ -85,7 +124,7 @@ export default function Journey({ character = null }) {
         </ol>
       </div>
 
-      {/* Reserved space for the character illustration (added later) */}
+      {/* Reserved space for the character illustration */}
       <div className="journey__character">{character}</div>
     </section>
   )

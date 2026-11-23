@@ -1,3 +1,4 @@
+
 import Stats from '../sections/about/Stats.jsx'
 import Journey from '../sections/about/Journey.jsx'
 import Gallery from '../sections/about/Gallery.jsx'
@@ -12,14 +13,41 @@ export default function About() {
       {/* about__top (About only) adds the two-column layout; about__intro is shared with Join us and Blogs */}
       <section className="about__intro about__top" aria-labelledby="about-heading">
         <div className="about__text">
-          <h2 id="about-heading" className="about__heading" data-reveal>About us</h2>
+          <h2 id="about-heading" className="about__heading" data-reveal>
+            About us
+          </h2>
+
           <p data-reveal>
-SheBuilds is a community-driven initiative that gives women in tech a place to collaborate, learn, and build real-world skills. We believe talent is everywhere, but access is not, so we bridge the gap between skilled women and real opportunities through hackathons, webinars, and mentorship.
+            <strong>Bridging Gaps, Breaking Barriers</strong>
           </p>
+
           <p data-reveal>
-             Whether you are just starting out or ready for your next big leap, SheBuilds is where ambition meets opportunity.
+            <strong>Built by Her, Backed by Boldness</strong>
           </p>
-          <Stats/>          
+
+          <p data-reveal>
+            SheBuilds is a movement to empower women in technology, innovation,
+            and entrepreneurship across India. Founded in 2024, SheBuilds exists
+            to close the gap between education, opportunity, and leadership for
+            women by giving them access to the tools, mentorship, and platforms
+            they need to learn, build, and scale.
+          </p>
+
+          <p data-reveal>
+            We are not just an initiative. We are an ecosystem where learning
+            creates talent, talent creates value, and value fuels real-world
+            impact. Through flagship events, strategic partnerships, and
+            community-driven programs, we bring together students, founders,
+            and industry leaders to share real stories, practical insights,
+            and meaningful connections.
+          </p>
+
+          <p data-reveal>
+            At our core, we believe that when women build, industries evolve,
+            communities grow, and the future transforms.
+          </p>
+
+          <Stats />
         </div>
 
         {/* character-art keeps the slot's size and spacing; CharacterLoop fills it */}
