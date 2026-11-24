@@ -17,7 +17,7 @@ function Footer() {
 
   return (
     <footer className="border-t-2 border-ink bg-background">
-      <Partners compact />
+      <Partners />
 
       {/* Below lg the left column is display: contents, so its items and the game form one stack
           (© moved last via order). On lg it becomes a real column beside the game. */}

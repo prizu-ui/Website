@@ -1,29 +1,29 @@
 import './Partners.css'
-import codeOnJvmChennai from '../../assets/code-on-jvm-chennai.png'
-import aiGeeks from '../../assets/ai-geeks.png'
-import nammaFlutter from '../../assets/namma-flutter.png'
-import chennaiReactJs from '../../assets/chennai-reactjs.png'
-import wyntrix from '../../assets/wyntrix.png'
-import mastra from '../../assets/mastra.png'
-import balsamiq from '../../assets/balsamiq.png'
-import navan from '../../assets/navan.png'
-import fossUnitedChennai from '../../assets/foss-united-chennai.png'
-import developerCommunity from '../../assets/chennai-dev-community.png'
-import codingCommunity from '../../assets/coding-community.png'
-import elevenLabs from '../../assets/elevenlabs.png'
-import happyFox from '../../assets/happyfox.png'
-import sponsorMark from '../../assets/sponsor-mark.png'
-import github from '../../assets/github.png'
-import azureDeveloperCommunity from '../../assets/azure-developer-community.png'
-import friendsOfFigmaChennai from '../../assets/friends-of-figma-chennai.png'
-import communityPartnerD from '../../assets/community-partner-d.png'
-import notion from '../../assets/notion.png'
-import ccl from '../../assets/ccl.png'
-import zuntraDigital from '../../assets/zuntra-digital.png'
-import kottraAi from '../../assets/kottra-ai.png'
-import mako from '../../assets/mako.png'
-import xyzDomain from '../../assets/xyz-domain.png'
-import interviewBuddy from '../../assets/interview-buddy.png'
+import codeOnJvmChennai from '../../assets/community/code-on-jvm-chennai.png'
+import aiGeeks from '../../assets/community/ai-geeks.png'
+import nammaFlutter from '../../assets/community/namma-flutter.png'
+import chennaiReactJs from '../../assets/community/chennai-reactjs.png'
+import wyntrix from '../../assets/partners/wyntrix.png'
+import mastra from '../../assets/partners/mastra.png'
+import balsamiq from '../../assets/partners/balsamiq.png'
+import navan from '../../assets/partners/navan.png'
+import fossUnitedChennai from '../../assets/community/foss-united-chennai.png'
+import developerCommunity from '../../assets/community/chennai-dev-community.png'
+import codingCommunity from '../../assets/community/coding-community.png'
+import elevenLabs from '../../assets/sponsors/elevenlabs.png'
+import happyFox from '../../assets/sponsors/happyfox.png'
+import sponsorMark from '../../assets/sponsors/sponsor-mark.png'
+import github from '../../assets/sponsors/github.png'
+import azureDeveloperCommunity from '../../assets/community/azure-developer-community.png'
+import friendsOfFigmaChennai from '../../assets/community/friends-of-figma-chennai.png'
+import communityPartnerD from '../../assets/community/community-partner-d.png'
+import notion from '../../assets/sponsors/notion.png'
+import ccl from '../../assets/sponsors/ccl.png'
+import zuntraDigital from '../../assets/sponsors/zuntra-digital.png'
+import kottraAi from '../../assets/sponsors/kottra-ai.png'
+import mako from '../../assets/sponsors/mako.png'
+import xyzDomain from '../../assets/partners/xyz-domain.png'
+import interviewBuddy from '../../assets/partners/interview-buddy.png'
 
 const communityPartners = [
   { name: 'CODE ON JVM Chennai', logo: codeOnJvmChennai },
@@ -57,56 +57,58 @@ const sponsors = [
   { name: 'MAKO', logo: mako },
 ]
 
-export default function Partners({ compact = false }) {
+function LogoBelt({ logos, direction }) {
   return (
-    <section className={`partners${compact ? ' partners--compact' : ''}`} aria-labelledby="partners-heading">
-      {!compact && (
-        <h2 id="partners-heading" className="about__heading partners__heading" data-reveal>
-          Partners
-        </h2>
-      )}
+    <div className="partners__belt" data-reveal>
+      <div className={`partners__track partners__track--${direction}`}>
+        <div className="partners__belt-group">
+          {logos.map((item) => (
+            <div className="partners__logo-slot partners__logo-slot--partner" key={item.name}>
+              <img src={item.logo} alt={`${item.name} logo`} className="partners__logo" />
+              <span className="partners__name">{item.name}</span>
+            </div>
+          ))}
+        </div>
+        <div className="partners__belt-group" aria-hidden="true">
+          {logos.map((item) => (
+            <div className="partners__logo-slot partners__logo-slot--partner" key={item.name}>
+              <img src={item.logo} alt="" className="partners__logo" />
+              <span className="partners__name">{item.name}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default function Partners() {
+  return (
+    <section className="partners" aria-labelledby="partners-heading">
+      <h2 id="partners-heading" className="about__heading partners__heading" data-reveal>
+        Partners
+      </h2>
 
       <div className="partners__groups">
         <section className="partners__group" aria-labelledby="community-partners-heading">
           <h3 id="community-partners-heading" className="partners__group-heading" data-reveal>
             Community Partners
           </h3>
-          <div className="partners__grid" data-reveal>
-            {communityPartners.map((partner) => (
-              <div className="partners__logo-slot partners__logo-slot--partner" key={partner.name}>
-                <img src={partner.logo} alt={`${partner.name} logo`} className="partners__logo" />
-                <span className="partners__name">{partner.name}</span>
-              </div>
-            ))}
-          </div>
+          <LogoBelt logos={communityPartners} direction="forward" />
         </section>
 
         <section className="partners__group" aria-labelledby="partners-group-heading">
           <h3 id="partners-group-heading" className="partners__group-heading" data-reveal>
             Partners
           </h3>
-          <div className="partners__grid" data-reveal>
-            {partners.map((partner) => (
-              <div className="partners__logo-slot partners__logo-slot--partner" key={partner.name}>
-                <img src={partner.logo} alt={`${partner.name} logo`} className="partners__logo" />
-                <span className="partners__name">{partner.name}</span>
-              </div>
-            ))}
-          </div>
+          <LogoBelt logos={partners} direction="reverse" />
         </section>
 
         <section className="partners__group" aria-labelledby="sponsors-heading">
           <h3 id="sponsors-heading" className="partners__group-heading" data-reveal>
             Sponsors
           </h3>
-          <div className="partners__grid" data-reveal>
-            {sponsors.map((sponsor) => (
-              <div className="partners__logo-slot partners__logo-slot--partner" key={sponsor.name}>
-                <img src={sponsor.logo} alt={`${sponsor.name} logo`} className="partners__logo" />
-                <span className="partners__name">{sponsor.name}</span>
-              </div>
-            ))}
-          </div>
+          <LogoBelt logos={sponsors} direction="forward" />
         </section>
       </div>
     </section>
