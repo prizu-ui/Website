@@ -123,14 +123,15 @@ function checkEvent(where, data, chapterId, seenIds) {
   }
   const collaborated = Array.isArray(tags) && tags.includes(COLLABORATED_TAG)
 
-  // partners: optional list of names; at least one when tagged "collaborated"
+  // Partners are optional. The collaborated tag alone identifies collaborated events.
   const partners = data.partners
   if (partners != null && (!Array.isArray(partners) || !partners.every(isText))) {
     fail(where, '"partners" must be a list of names, e.g. ["GDG Chennai"]')
   }
   const hasPartners = Array.isArray(partners) && partners.length > 0
-  if (collaborated && !hasPartners) fail(where, `tagged "${COLLABORATED_TAG}" but "partners" lists no one (add at least one name)`)
-  if (hasPartners && !collaborated) warn(where, `"partners" is set but the event isn't tagged "${COLLABORATED_TAG}"`)
+  if (hasPartners && !collaborated) {
+    warn(where, `"partners" is set but the event isn't tagged "${COLLABORATED_TAG}"`)
+  }
 
   if (data.attendees != null && !(Number.isInteger(data.attendees) && data.attendees >= 0)) {
     fail(where, '"attendees" must be a whole number without quotes, or null')

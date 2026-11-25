@@ -25,7 +25,7 @@ export const PHONE_PILL_CLASS = 'max-sm:shrink-0 max-sm:whitespace-nowrap max-sm
 // outlines visible inside the scroll box without shifting the row.
 const PHONE_ROW_CLASS = 'max-sm:flex-nowrap max-sm:gap-2 max-sm:overflow-x-auto max-sm:scrollbar-none max-sm:-m-1 max-sm:p-1'
 
-export function EventFilters({ query, setQuery, selectedTags, toggleTag, clearTags, availableTags, cities, selection, setCity, setChapter, action }) {
+export function EventFilters({ query, setQuery, selectedTags, toggleTag, clearTags, availableTags, cities, selection, setCity, setChapter, action, hideCollaborated = false })  {
   const chips = (
     <>
       <button type="button" aria-pressed={selectedTags.length === 0} onClick={clearTags} className={`${pillClass(selectedTags.length === 0)} ${PHONE_PILL_CLASS}`}>

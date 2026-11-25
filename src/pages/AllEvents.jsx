@@ -1,3 +1,4 @@
+
 import { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react'
 import { Link, useLocation } from 'react-router'
 import EventsTimeline from '../sections/events/EventsTimeline.jsx'
@@ -8,39 +9,49 @@ import { resultsAnnouncement, splitTimeline, yearId } from '../sections/events/e
 import { prefersReducedMotion } from '../siteSections.js'
 import usePageTitle from '../components/usePageTitle.js'
 
-// /events, rendered inside Layout (navbar and footer stay): every event on a timeline, upcoming
-// first, then past events by year. No element here uses a section id (#events etc.), so the
-// navbar treats this as "not the home page".
 export default function AllEvents() {
-  // One clock for both the loader's order and the upcoming/past split
   const now = useMemo(() => new Date(), [])
   const events = useMemo(() => getEvents(now), [now])
-  // ?city= / ?chapter= / ?tag= in the address apply on arrival (unknown values are ignored)
+
   const { search } = useLocation()
   const [initialFilters] = useState(() => filtersFromSearch(search))
   const filters = useEventFilters(events, initialFilters)
   const { filtered, selection, selectedTags } = filters
-  const { upcoming, past } = useMemo(() => splitTimeline(filtered, now), [filtered, now])
+
+  const [eventView, setEventView] = useState('regular')
+
+  // Regular events include community events. Collaborated events appear in their own tab.
+  // Events carrying both tags appear in both tabs.
+  const visibleEvents = useMemo(
+    () =>
+      filtered.filter((event) =>
+        eventView === 'collaborated'
+          ? event.tags.includes('collaborated')
+          : event.tags.includes('community')
+      ),
+    [filtered, eventView]
+  )
+
+  const { upcoming, past } = useMemo(
+    () => splitTimeline(visibleEvents, now),
+    [visibleEvents, now]
+  )
 
   const pageRef = useRef(null)
   const barRef = useRef(null)
 
-  // Arriving from the home page leaves us scrolled down; start at the top
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: prefersReducedMotion() ? 'instant' : 'auto' })
   }, [])
+
   usePageTitle('All events')
 
-  // Keep the address in step with the city/chapter and tags, replacing the current entry (no new
-  // history entry per click, no reload). The search text and any #year stay as they are.
   useEffect(() => {
     const next = filtersToSearch({ selection, selectedTags })
     if (next === window.location.search) return
     history.replaceState(history.state, '', `${window.location.pathname}${next}${window.location.hash}`)
   }, [selection, selectedTags])
 
-  // The sticky filter bar's real height (it wraps on narrow screens), so year headings
-  // reached by a jump link land below it
   useLayoutEffect(() => {
     const bar = barRef.current
     const page = pageRef.current
@@ -51,7 +62,6 @@ export default function AllEvents() {
     return () => observer.disconnect()
   }, [])
 
-  // Scroll to a year without pushing history entries (like the navbar's section links)
   const jumpTo = (e, year) => {
     const el = document.getElementById(yearId(year))
     if (!el) return
@@ -73,18 +83,51 @@ export default function AllEvents() {
       <h1 id="all-events-heading" className="about__heading">
         All events
       </h1>
-      {/* Screen readers only: announced when the filters change */}
+
       <p aria-live="polite" className="sr-only">
-        {resultsAnnouncement(filtered.length)}
+        {resultsAnnouncement(visibleEvents.length)}
       </p>
 
-      {/* Sticky just below the navbar; opaque, so the timeline scrolls underneath it */}
       <div ref={barRef} className="events-page__bar">
-        <EventFilters {...filters} />
+        <div className="mb-4 flex flex-wrap gap-3" role="group" aria-label="Choose event category">
+          <button
+            type="button"
+            aria-pressed={eventView === 'regular'}
+            onClick={() => setEventView('regular')}
+            className={`rounded-full border-2 border-ink px-5 py-2 font-body font-bold transition-colors ${
+              eventView === 'regular'
+                ? 'bg-ink text-white'
+                : 'bg-surface text-ink hover:bg-ink/10'
+            }`}
+          >
+            Regular Events
+          </button>
+
+          <button
+            type="button"
+            aria-pressed={eventView === 'collaborated'}
+            onClick={() => setEventView('collaborated')}
+            className={`rounded-full border-2 border-ink px-5 py-2 font-body font-bold transition-colors ${
+              eventView === 'collaborated'
+                ? 'bg-ink text-white'
+                : 'bg-surface text-ink hover:bg-ink/10'
+            }`}
+          >
+            Collaborated
+          </button>
+        </div>
+
+        <EventFilters {...filters} hideCollaborated />
+
         {past.length > 0 && (
           <nav aria-label="Jump to year" className="events-page__years">
             {past.map(({ year }) => (
-              <a key={year} href={`#${yearId(year)}`} onClick={(e) => jumpTo(e, year)} className="events-page__year">
+              <a
+                key={year}
+                href={`#${yearId(year)}`}
+                onClick={(e) => jumpTo(e, year)}
+                className="events-page__year"
+              >
                 {year}
               </a>
             ))}
@@ -92,7 +135,7 @@ export default function AllEvents() {
         )}
       </div>
 
-      {filtered.length > 0 ? (
+      {visibleEvents.length > 0 ? (
         <EventsTimeline upcoming={upcoming} past={past} />
       ) : (
         <EventsEmpty totalCount={events.length} {...filters} />
