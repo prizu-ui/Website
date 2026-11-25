@@ -3,6 +3,7 @@ import logo from '../assets/logo.jpeg'
 import { sections, scrollToSection } from '../siteSections.js'
 import BlockGame from './BlockGame.jsx'
 import SocialLinks from './SocialLinks.jsx'
+import Partners from '../sections/partners/Partners.jsx'
 
 const navLinkClass =
   'rounded-sm font-body font-bold text-ink underline-offset-4 hover:underline focus-visible:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink'
@@ -16,6 +17,8 @@ function Footer() {
 
   return (
     <footer className="border-t-2 border-ink bg-background">
+      <Partners />
+
       {/* Below lg the left column is display: contents, so its items and the game form one stack
           (© moved last via order). On lg it becomes a real column beside the game. */}
       <div className="flex flex-col items-start gap-6 px-6 py-10 md:px-12 lg:flex-row lg:items-center lg:justify-between lg:gap-12">
