@@ -16,7 +16,7 @@
       "featured": true,
       "image": "/events/code-and-connect-3.webp",
       "registerUrl": "https://shebuilds-chennai.tech/",
-      "postUrl": "https://www.linkedin.com/posts/shebuildsecosystem_shebuilds-womenintech-womenwholead-activity-7412713610260447232-SPxs"
+      "postUrl": "https://www.linkedin.com/posts/p-anantha-rithanya-20aids_shebuildscodeandconnect-womenintech-techconference-activity-7423761964994183168-Vxzk"
     },
     {
       "title": "February Meetup",
@@ -40,7 +40,7 @@
       "featured": false,
       "image": "/events/march-meetup.jpg",
       "registerUrl": null,
-      "postUrl": "https://www.linkedin.com/posts/shebuildsecosystem_she-builds-chennai-x-codesapiens-the-student-activity-7435668535621689344-LM3V"
+      "postUrl": "https://www.linkedin.com/posts/md-ayaan_event-meetup-activity-7439494342282588160-uK3l"
     },
     {
       "title": "Personal Branding & Everyday AI - April Meetup",
@@ -52,7 +52,7 @@
       "featured": false,
       "image": "/events/april-meetup.jpg",
       "registerUrl": null,
-      "postUrl": null
+      "postUrl": "https://www.linkedin.com/posts/keerthana-m-g-12ba59256_shebuilds-chennai-april-meetup-activity-7450460023702392832-dusZ"
     },
     {
       "title": "Design Thinking: A Panel Discussion",
@@ -64,7 +64,7 @@
       "featured": false,
       "image": "/events/may-panel-discussion.jpg",
       "registerUrl": null,
-      "postUrl": "https://www.linkedin.com/posts/shebuildsecosystem_shebuilds-chennai-anitaborg-were-excited-activity-7459182397587103744-wunO"
+      "postUrl": "https://www.linkedin.com/posts/mukilan-c-084862291_shebuilds-anitaborgindia-womenintech-activity-7469400633935282176-GQKM"
     },
     {
       "title": "HER Second Innings - Art and Journaling Session",
@@ -86,7 +86,7 @@
       "end": "2026-07-20",
       "venue": "Online",
       "featured": false,
-      "image": null,
+      "image": "/events/upskill-her.jpg",
       "registerUrl": null,
       "postUrl": null
     },
@@ -101,7 +101,7 @@
       "featured": false,
       "image": "/events/july-upskill-her.jpg",
       "registerUrl": "https://luma.com/5emrh8ce",
-      "postUrl": null
+      "postUrl": "https://www.linkedin.com/posts/lakshana-an-8a5312387_shebuilds-build2learn-volunteerexperience-activity-7485018647736819713-vZoh"
     },
     {
       "title": "SheBuilds Chennai Hack - Code & Challenge 3.0",
@@ -114,7 +114,7 @@
       "featured": true,
       "image": "/events/shebuilds-chennai-hack.jpg",
       "registerUrl": "https://shebuildschennai.in/",
-      "postUrl": "https://luma.com/cccl.tnil1"
+      "postUrl": "https://www.linkedin.com/posts/shebuildsecosystem_shebuilds-chennaicccl-hack-x-github-activity-7491871920242446336-RN4x"
     },
     {
       "title": "Typedcoders 3.0",
@@ -126,7 +126,7 @@
       "featured": false,
       "image": "/events/typedcoders-3.jpg",
       "registerUrl": null,
-      "postUrl": "https://www.linkedin.com/posts/vellies_typedcoders-typescript-typescript7-activity-7491849848745488385-FMRA"
+      "postUrl": null
     },
     {
       "title": "Madras Day Event",
@@ -151,7 +151,7 @@
       "featured": false,
       "image": "/events/ai-dev-meetup.jpg",
       "registerUrl": null,
-      "postUrl": null
+      "postUrl": "https://www.linkedin.com/posts/venkateswara-rao-750a69255_ai-is-no-longer-just-a-technology-we-talk-activity-7504944844524609536-k_B1"
     },
     {
       "title": "Thedal 1.0",
@@ -163,7 +163,7 @@
       "featured": false,
       "image": "/events/thedal-1.jpg",
       "registerUrl": null,
-      "postUrl": "https://www.linkedin.com/posts/roopavathi-kumaravel_thedal-10-a-madurai-business-conclave-activity-7497511761865146368-CLu1"
+      "postUrl": null
     },
     {
       "title": "UGHAM ShePitch Competition",
@@ -235,7 +235,7 @@
       "venue": "Infosys",
       "featured": false,
       "image": "/events/dev-carnival.jpg",
-      "registerUrl": null,
+      "registerUrl": "https://konfhub.com/widget/id/c4d4ff60-ab04-42af-aaf8-fba02b893bd6" ,
       "postUrl": null
     }
   ]
