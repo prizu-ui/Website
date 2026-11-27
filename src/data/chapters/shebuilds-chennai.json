@@ -9,215 +9,234 @@
       "title": "Code and Connect 3.0",
       "format": "Conference",
       "tags": ["community", "collaborated"],
-      "description": "Tamil Nadu's biggest women in tech conference, organized by the SheBuilds ecosystem in Chennai. Community partner: Namma Flutter. Partners include Wyntrix.",
+      "description": "A women-in-tech conference bringing together developers and technology enthusiasts for conversations, industry perspectives, learning and networking.",
       "start": "2026-01-31",
       "end": null,
       "venue": "REC, Chennai",
       "featured": true,
       "image": "/events/code-and-connect-3.webp",
-      "registerUrl": "https://shebuilds-chennai.tech/"
+      "registerUrl": "https://shebuilds-chennai.tech/",
+      "postUrl": "https://www.linkedin.com/posts/shebuildsecosystem_shebuilds-womenintech-womenwholead-activity-7412713610260447232-SPxs"
     },
     {
       "title": "February Meetup",
       "tags": ["community"],
-      "description": "A SheBuilds Chennai community meetup.",
+      "description": "An interactive meetup exploring AI agents. Participants took part in role-play activities and experimented with building a JARVIS-like AI assistant using Google Antigravity.",
       "start": "2026-02-28",
       "end": null,
       "venue": "HappyFox Technologies",
       "featured": false,
-      "image":  "/events/february-meetup.jpg",
-      "registerUrl": null
+      "image": "/events/february-meetup.jpg",
+      "registerUrl": null,
+      "postUrl": "https://www.linkedin.com/posts/shebuildsecosystem_what-happens-when-curious-minds-come-together-activity-7437885484858548224-eKP0"
     },
     {
       "title": "March Meetup",
       "tags": ["community", "collaborated"],
-      "description": "A SheBuilds Chennai meetup in collaboration with CodeSapiens.",
+      "description": "A Women's Day community meetup organised with CodeSapiens, bringing women in technology together to share experiences, connect and celebrate their contributions to the tech community.",
       "start": "2026-03-14",
       "end": null,
       "venue": "Mako IT Lab",
       "featured": false,
       "image": "/events/march-meetup.jpg",
-      "registerUrl": null
+      "registerUrl": null,
+      "postUrl": "https://www.linkedin.com/posts/shebuildsecosystem_she-builds-chennai-x-codesapiens-the-student-activity-7435668535621689344-LM3V"
     },
     {
       "title": "Personal Branding & Everyday AI - April Meetup",
       "tags": ["community"],
-      "description": "A SheBuilds Chennai meetup focused on personal branding and everyday AI.",
+      "description": "A community meetup focused on building a personal brand and exploring practical ways to use AI in everyday professional and creative work.",
       "start": "2026-04-11",
       "end": null,
       "venue": "Mako IT Lab",
       "featured": false,
       "image": "/events/april-meetup.jpg",
-      "registerUrl": null
+      "registerUrl": null,
+      "postUrl": null
     },
     {
       "title": "Design Thinking: A Panel Discussion",
       "tags": ["community", "collaborated"],
-      "description": "A panel discussion on design thinking in collaboration with AnitaB.org.",
+      "description": "A collaborative meetup with AnitaB.org where women from different career stages shared perspectives, explored design thinking challenges and connected through conversations and interactive activities.",
       "start": "2026-05-30",
       "end": null,
       "venue": "Yuniq",
       "featured": false,
       "image": "/events/may-panel-discussion.jpg",
-      "registerUrl": null
+      "registerUrl": null,
+      "postUrl": "https://www.linkedin.com/posts/shebuildsecosystem_shebuilds-chennai-anitaborg-were-excited-activity-7459182397587103744-wunO"
     },
     {
       "title": "HER Second Innings - Art and Journaling Session",
       "tags": ["community"],
-      "description": "An art and journaling session hosted by SheBuilds Chennai.",
+      "description": "An art and journaling session designed to create space for creative expression, reflection and meaningful connections among participants.",
       "start": "2026-06-21",
       "end": null,
       "venue": "Wasted 360 Solutions",
       "featured": false,
       "image": "/events/june-her-second-innings.jpg",
-      "registerUrl": null
+      "registerUrl": null,
+      "postUrl": null
     },
     {
       "title": "Upskill-HER: An Online Bootcamp for Women",
       "tags": ["community", "collaborated"],
-      "description": "An online bootcamp for women in collaboration with Intellexa REC.",
+      "description": "An online bootcamp organised in collaboration with Intellexa REC, providing women with an opportunity to strengthen their technical skills through a structured learning programme.",
       "start": "2026-07-10",
       "end": "2026-07-20",
       "venue": "Online",
       "featured": false,
       "image": null,
-      "registerUrl": null
+      "registerUrl": null,
+      "postUrl": null
     },
     {
       "title": "SheBuilds X Build2Learn - July Meetup",
       "format": "Meetup",
       "tags": ["community", "collaborated"],
-      "description": "A collaborative 3-hour buildathon for working professionals to build prototypes, share ideas and showcase projects.",
+      "description": "A three-hour collaborative buildathon where working professionals developed MVP prototypes, exchanged ideas and presented their projects through a hands-on building experience.",
       "start": "2026-07-11",
       "end": null,
       "venue": "Mako IT Lab - Indian Delivery Center",
       "featured": false,
-      "image":"/events/july-upskill-her.jpg" ,
-      "registerUrl": "https://luma.com/5emrh8ce"
+      "image": "/events/july-upskill-her.jpg",
+      "registerUrl": "https://luma.com/5emrh8ce",
+      "postUrl": null
     },
     {
       "title": "SheBuilds Chennai Hack - Code & Challenge 3.0",
       "format": "Hackathon",
       "tags": ["community", "collaborated"],
-      "description": "A national-level, women-only hybrid hackathon by SheBuilds Chennai with Intellexa and REC. Teams of 2 to 4 tackled real-world problems around the Sustainable Development Goals, from an online innovation round to a 24-hour offline finale.",
+      "description": "A women-focused hybrid hackathon where teams tackled real-world Sustainable Development Goal challenges through an online round and a 24-hour offline finale.",
       "start": "2026-08-01",
       "end": "2026-08-02",
       "venue": "Rajalakshmi Engineering College",
       "featured": true,
       "image": "/events/shebuilds-chennai-hack.jpg",
-      "registerUrl": "https://shebuildschennai.in/"
+      "registerUrl": "https://shebuildschennai.in/",
+      "postUrl": "https://luma.com/cccl.tnil1"
     },
     {
       "title": "Typedcoders 3.0",
       "tags": ["collaborated"],
-      "description": "A collaborative event hosted as Typecoders 3.0.",
+      "description": "A developer-focused technical event featuring discussions around TypeScript 7, its compiler improvements and modern TypeScript development.",
       "start": "2026-08-08",
       "end": null,
       "venue": "Talentship Technologies",
       "featured": false,
       "image": "/events/typedcoders-3.jpg",
-      "registerUrl": null
+      "registerUrl": null,
+      "postUrl": "https://www.linkedin.com/posts/vellies_typedcoders-typescript-typescript7-activity-7491849848745488385-FMRA"
     },
     {
       "title": "Madras Day Event",
       "format": "Meetup",
       "tags": ["community", "collaborated"],
-      "description": "A Saturday morning reset for builders: a beach walk, a few games, good conversations and breakfast together, away from the usual setting.",
+      "description": "A relaxed community morning organised with Doing Things AI, featuring a beach walk, games, conversations and breakfast, giving builders a chance to connect outside their usual work environment.",
       "start": "2026-08-22",
       "end": null,
       "venue": "Besant Nagar Beach, Chennai",
       "featured": false,
       "image": "/events/shebuilds-x-doing-things-ai-meetup.jpg",
-      "registerUrl": "https://luma.com/ql9t3ilh"
+      "registerUrl": "https://luma.com/ql9t3ilh",
+      "postUrl": null
     },
     {
       "title": "AI Dev Meetup",
       "tags": ["community"],
-      "description": "A SheBuilds Chennai AI developer meetup.",
+      "description": "An interactive developer meetup exploring AI, Claude and open-source AI, with discussions and opportunities for technology enthusiasts to exchange ideas.",
       "start": "2026-09-12",
       "end": null,
       "venue": "Zuntra Digital",
       "featured": false,
       "image": "/events/ai-dev-meetup.jpg",
-      "registerUrl": null
+      "registerUrl": null,
+      "postUrl": null
     },
     {
       "title": "Thedal 1.0",
       "tags": ["collaborated"],
-      "description": "A collaborative event hosted as Thedal 1.0.",
+      "description": "A business conclave organised by Women Professional Connect, bringing together entrepreneurs and professionals for discussions around business growth, wealth, health, technology, AI, automation and networking.",
       "start": "2026-09-12",
       "end": null,
       "venue": "Poppys Hotel, Madurai",
       "featured": false,
-      "image": null,
-      "registerUrl": null
+      "image": "/events/thedal-1.jpg",
+      "registerUrl": null,
+      "postUrl": "https://www.linkedin.com/posts/roopavathi-kumaravel_thedal-10-a-madurai-business-conclave-activity-7497511761865146368-CLu1"
     },
     {
       "title": "UGHAM ShePitch Competition",
       "tags": ["collaborated"],
-      "description": "A collaborative ShePitch competition.",
+      "description": "A women-focused pitching competition featuring Idea Pitch and Project Pitch tracks, giving participants a platform to present their innovations and projects.",
       "start": "2026-09-19",
       "end": null,
       "venue": "Jeppiaar University",
       "featured": false,
-      "image": null,
-      "registerUrl": null
+      "image": "/events/ugham-award-ceremony.jpg",
+      "registerUrl": null,
+      "postUrl": null
     },
     {
       "title": "When Product Meets Perspective: October Meetup",
       "format": "Meetup",
       "tags": ["community"],
-      "description": "An interactive session on the whole product: understanding users, choosing the right problem, positioning it and taking it to market. Open to developers, students, aspiring PMs, marketing enthusiasts, founders and working professionals.",
+      "description": "An interactive meetup exploring product management and go-to-market strategy, covering problem discovery, product prioritisation, positioning and product launches.",
       "start": "2026-10-10",
       "end": null,
       "venue": "Technorucs, Pallikaranai, Chennai",
       "featured": false,
       "image": "/events/october-product-meetup.jpg",
-      "registerUrl": "https://luma.com/sc9wpbri"
+      "registerUrl": "https://luma.com/sc9wpbri",
+      "postUrl": null
     },
     {
       "title": "Flutter South India Conference",
       "tags": ["collaborated"],
-      "description": "A collaborative event hosted as the Flutter South India Conference.",
+      "description": "A community-led Flutter and Dart conference featuring practical technical sessions, talks, demonstrations and discussions, along with opportunities for developers to connect and share knowledge.",
       "start": "2026-10-10",
       "end": null,
       "venue": "SRM IST Campus",
       "featured": false,
-      "image": null,
-      "registerUrl": null
+      "image": "/events/flutter-south-india.jpg",
+      "registerUrl": null,
+      "postUrl": null
     },
     {
       "title": "TechXConf",
       "tags": ["collaborated"],
-      "description": "A collaborative technology conference.",
+      "description": "An AI, Cloud and Data technology conference bringing developers and industry professionals together for multi-track sessions, expert insights and networking.",
       "start": "2026-10-24",
       "end": null,
-      "venue": "IITMRP",
+      "venue": "IIT Madras Research Park, Chennai",
       "featured": false,
       "image": "/events/techxconf.jpg",
-      "registerUrl": null
+      "registerUrl": null,
+      "postUrl": null
     },
     {
       "title": "Security Decoded: November Meetup",
       "tags": ["community"],
-      "description": "A SheBuilds Chennai meetup focused on security.",
+      "description": "A cybersecurity meetup covering vulnerabilities, AI-powered attacks, deepfakes and digital safety, alongside practical discussions on financial awareness and money management.",
       "start": "2026-11-28",
       "end": null,
-      "venue": "Ideas2IT",
+      "venue": "Ideas2IT, Guindy, Chennai",
       "featured": false,
-      "image": null,
-      "registerUrl": null
+      "image": "/events/security-decoded.jpg",
+      "registerUrl": "https://luma.com/dprjx6l1",
+      "postUrl": null
     },
     {
       "title": "Dev Carnival",
       "tags": ["collaborated"],
-      "description": "A collaborative developer event.",
+      "description": "A two-day developer festival featuring technology sessions, hands-on learning and community activities across areas such as AI, cloud, backend development, DevOps and data.",
       "start": "2027-01-08",
       "end": "2027-01-09",
       "venue": "Infosys",
       "featured": false,
-      "image": null,
-      "registerUrl": null
+      "image": "/events/dev-carnival.jpg",
+      "registerUrl": null,
+      "postUrl": null
     }
   ]
 }
