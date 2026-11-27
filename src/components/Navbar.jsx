@@ -1,5 +1,5 @@
 import { useEffect, useLayoutEffect, useRef, useState } from 'react'
-import { useLocation, useNavigate } from 'react-router'
+import { Link, useLocation, useNavigate } from 'react-router'
 import logo from '../assets/logo.jpeg'
 import { sections, scrollToSection } from '../siteSections.js'
 
@@ -23,8 +23,12 @@ function Navbar() {
   const buttonRef = useRef(null)
   const { pathname } = useLocation()
   const navigate = useNavigate()
-  // On the All events page the Events pill stays active; elsewhere the scroll position decides
-  const current = pathname === '/events' ? 'events' : active
+  // On dedicated routes (/events, /merch) keep that pill active; elsewhere scroll position decides
+  const current = pathname.startsWith('/merch')
+    ? 'merch'
+    : pathname === '/events'
+      ? 'events'
+      : active
 
   // Publish the rendered navbar height as --nav-height (drives html scroll-padding-top and
   // section min-height). Measured, not hardcoded: it differs between desktop and mobile.
@@ -89,11 +93,22 @@ function Navbar() {
   }
 
   const renderLinks = (mobile = false) =>
-    sections.map(({ id, label }) => (
+    sections.map(({ id, label, to }) => (
       <li key={id} className={mobile ? 'w-full max-w-xs' : undefined}>
-        <a href={`/#${id}`} onClick={(e) => go(e, id)} aria-current={current === id ? 'true' : undefined} className={linkClass(current === id, mobile)}>
-          {label}
-        </a>
+        {to ? (
+          <Link
+            to={to}
+            onClick={() => setOpen(false)}
+            aria-current={current === id ? 'page' : undefined}
+            className={linkClass(current === id, mobile)}
+          >
+            {label}
+          </Link>
+        ) : (
+          <a href={`/#${id}`} onClick={(e) => go(e, id)} aria-current={current === id ? 'true' : undefined} className={linkClass(current === id, mobile)}>
+            {label}
+          </a>
+        )}
       </li>
     ))
 

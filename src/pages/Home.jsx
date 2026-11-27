@@ -6,6 +6,7 @@ import { sections, scrollToSection } from '../siteSections.js'
 import JoinUs from './JoinUs.jsx'
 import Events from '../sections/events/Events.jsx'
 import Blogs from '../sections/blogs/Blogs.jsx'
+import MerchSection from '../sections/merch/MerchSection.jsx'
 import usePageTitle from '../components/usePageTitle.js'
 
 // The whole site: one scrolling page, sections in nav order.
@@ -34,6 +35,9 @@ function Home() {
       </PageSection>
       <PageSection id="blogs">
         <Blogs />
+      </PageSection>
+      <PageSection id="merch">
+        <MerchSection />
       </PageSection>
     </>
   )

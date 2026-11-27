@@ -1,7 +1,6 @@
 .partners {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 2rem;
+  width: 100%;
+  padding: 2rem 0;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -9,6 +8,7 @@
 
 .partners__heading {
   margin: 0 0 1.5rem;
+  padding-inline: 3rem;
 }
 
 .partners__groups {
@@ -24,6 +24,7 @@
 
 .partners__group-heading {
   margin: 0 0 0.65rem;
+  padding-inline: 3rem;
   font-family: var(--font-display);
   font-size: clamp(1.15rem, 1.7vw, 1.5rem);
   font-weight: 600;
@@ -124,11 +125,16 @@
 
 @media (width < 48rem) {
   .partners {
-    padding: 1.5rem 1rem;
+    padding: 1.5rem 0;
   }
 
   .partners__heading {
     margin-bottom: 1rem;
+    padding-inline: 1rem;
+  }
+
+  .partners__group-heading {
+    padding-inline: 1rem;
   }
 
   .partners__logo-slot {

@@ -5,6 +5,7 @@ export const sections = [
   { id: 'join', label: 'Join us' },
   { id: 'events', label: 'Events' },
   { id: 'blogs', label: 'Blogs' },
+  { id: 'merch', label: 'Merch', to: '/merch' },
 ]
 
 export const prefersReducedMotion = () =>

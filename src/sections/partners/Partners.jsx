@@ -51,7 +51,7 @@ const sponsors = [
   { name: 'Sponsor', logo: sponsorMark },
   { name: 'GitHub', logo: github },
   { name: 'Notion', logo: notion },
-  { name: 'CCL', logo: ccl },
+  { name: 'CCCL', logo: ccl },
   { name: 'Zuntra Digital', logo: zuntraDigital },
   { name: 'Kottra.ai', logo: kottraAi },
   { name: 'MAKO', logo: mako },

@@ -1,4 +1,5 @@
 
+import { Link, useLocation, useNavigate } from 'react-router'
 import logo from '../assets/logo.jpeg'
 import { sections, scrollToSection } from '../siteSections.js'
 import BlockGame from './BlockGame.jsx'
@@ -9,15 +10,19 @@ const navLinkClass =
   'rounded-sm font-body font-bold text-ink underline-offset-4 hover:underline focus-visible:underline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ink'
 
 function Footer() {
+  const { pathname } = useLocation()
+  const navigate = useNavigate()
+
   // Real #anchors work without JS; with JS we smooth-scroll like the navbar does
   const go = (e, id) => {
     e.preventDefault()
-    scrollToSection(id)
+    if (pathname === '/') scrollToSection(id)
+    else navigate({ pathname: '/', hash: `#${id}` })
   }
 
   return (
     <footer className="border-t-2 border-ink bg-background">
-      <Partners />
+      {pathname === '/' && <Partners />}
 
       {/* Below lg the left column is display: contents, so its items and the game form one stack
           (© moved last via order). On lg it becomes a real column beside the game. */}
@@ -34,11 +39,17 @@ function Footer() {
 
           <nav aria-label="Footer">
             <ul className="flex flex-wrap gap-x-6 gap-y-2">
-              {sections.map(({ id, label }) => (
+              {sections.map(({ id, label, to }) => (
                 <li key={id}>
-                  <a href={`#${id}`} onClick={(e) => go(e, id)} className={navLinkClass}>
-                    {label}
-                  </a>
+                  {to ? (
+                    <Link to={to} className={navLinkClass}>
+                      {label}
+                    </Link>
+                  ) : (
+                    <a href={`/#${id}`} onClick={(e) => go(e, id)} className={navLinkClass}>
+                      {label}
+                    </a>
+                  )}
                 </li>
               ))}
             </ul>
