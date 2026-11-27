@@ -32,15 +32,6 @@ const COLLECTIONS = [
     color: 'Purple',
     badgeBg: 'bg-yellow',
   },
-  {
-    title: 'Combo Packs',
-    subtitle: 'Curated Builder Sets',
-    categorySlug: 'combos',
-    to: '/merch/products?combo=true',
-    visualType: 'combo',
-    color: 'Coral',
-    badgeBg: 'bg-lavender',
-  },
 ]
 
 function getCollectionImage(products, categorySlug) {
@@ -62,7 +53,7 @@ export default function MerchSection() {
         className="w-full grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-surface border-2 border-ink rounded-2xl shadow-brutal-lg p-6 md:p-10 lg:p-12"
       >
         {/* Left Editorial Pitch */}
-        <div className="lg:col-span-6 flex flex-col items-start gap-4">
+        <div className="lg:col-span-5 flex flex-col items-start gap-4">
           <span className="inline-flex items-center gap-2 rounded-full border-2 border-ink bg-yellow px-3.5 py-1 font-body text-xs font-bold uppercase tracking-wider text-ink">
             <TagIcon className="w-3.5 h-3.5" />
             Women in Tech Drop
@@ -77,8 +68,7 @@ export default function MerchSection() {
 
           <p className="font-body text-base md:text-lg text-ink leading-relaxed max-w-xl">
             Crafted for women who write the code, ship bold ideas, and set the tone in every room.
-            Explore cyber-builder{' '}
-            <strong>T-Shirts, Heavyweight Hoodies, Desk Phone Stands, and Value Combos</strong>{' '}
+            Explore our signature <strong>T-Shirts, Heavyweight Hoodies, and Keychain Phone Stands</strong>{' '}
             made to live in from sprints to demo days.
           </p>
 
@@ -109,8 +99,8 @@ export default function MerchSection() {
           </div>
         </div>
 
-        {/* Right Compact 2x2 Collection Showcase (no prices) */}
-        <div className="lg:col-span-6 grid grid-cols-2 gap-4">
+        {/* Right 3-Card Product Showcase (no prices) */}
+        <div className="lg:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-4">
           {COLLECTIONS.map((col) => {
             const realImage = getCollectionImage(products, col.categorySlug)
             return (
@@ -119,7 +109,7 @@ export default function MerchSection() {
                 to={col.to}
                 className="group flex flex-col rounded-2xl border-2 border-ink bg-background shadow-brutal-sm overflow-hidden transition hover:-translate-x-0.5 hover:-translate-y-0.5 hover:shadow-brutal"
               >
-                <div className="h-32 sm:h-36 md:h-40 border-b-2 border-ink overflow-hidden bg-surface">
+                <div className="h-44 sm:h-48 lg:h-52 border-b-2 border-ink overflow-hidden bg-surface">
                   <MerchVisual
                     image={realImage}
                     productName={col.title}
@@ -128,7 +118,7 @@ export default function MerchSection() {
                     className="transition-transform duration-300 group-hover:scale-105"
                   />
                 </div>
-                <div className="flex items-center justify-between gap-2 bg-surface px-3.5 py-2.5">
+                <div className="flex items-center justify-between gap-2 bg-surface px-3.5 py-3">
                   <div className="min-w-0">
                     <p className="font-display text-sm font-bold text-ink truncate">{col.title}</p>
                     <p className="font-body text-xs text-muted truncate">{col.subtitle}</p>

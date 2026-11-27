@@ -9,13 +9,11 @@ export default function MerchLayout() {
   const navItems = [
     { to: '/merch', label: 'Store', exact: true },
     { to: '/merch/products', label: 'All Products' },
-    { to: '/merch/products?combo=true', label: 'Combos' },
     { to: '/merch/track', label: 'Track Order' },
   ]
 
   const isActive = (item) => {
     if (item.exact) return pathname === '/merch'
-    if (item.to.includes('?combo=true')) return false
     return pathname.startsWith(item.to)
   }
 

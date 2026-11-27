@@ -108,19 +108,13 @@ export default function MerchProducts() {
         </form>
       </div>
 
-      {/* Category & Combo Filter Pills */}
+      {/* Category Filter Pills */}
       <div className="flex flex-wrap gap-2.5 mb-8">
         <Link
           to="/merch/products"
           className={PILL_CHIP(!activeCategorySlug && !isComboFilter)}
         >
           All
-        </Link>
-        <Link
-          to="/merch/products?combo=true"
-          className={PILL_CHIP(isComboFilter, 'coral')}
-        >
-          Combos
         </Link>
         {activeCategories.map((cat) => (
           <Link

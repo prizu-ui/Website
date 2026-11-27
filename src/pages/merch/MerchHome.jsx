@@ -1,6 +1,6 @@
 import { Link } from 'react-router'
 import { useEffect } from 'react'
-import { CheckCircleIcon, PackageIcon, TagIcon, TruckIcon } from '../../merch/MerchIcons.jsx'
+import { CheckCircleIcon, PackageIcon, TruckIcon } from '../../merch/MerchIcons.jsx'
 import { ProductCard } from '../../merch/ProductCard.jsx'
 import { useMerch } from '../../merch/useMerch.js'
 import { PILL_INK, PILL_PRIMARY, PILL_SURFACE } from '../../merch/merchStyles.js'
@@ -45,9 +45,8 @@ export default function MerchHome() {
             <Link to="/merch/products" className={PILL_PRIMARY}>
               Shop All Products <span aria-hidden="true">→</span>
             </Link>
-            <Link to="/merch/products?combo=true" className={PILL_SURFACE}>
-              <TagIcon className="w-4 h-4" />
-              View Combo Deals
+            <Link to="/merch/track" className={PILL_SURFACE}>
+              Track Your Order
             </Link>
           </div>
         </div>
@@ -107,12 +106,6 @@ export default function MerchHome() {
                 {cat.name}
               </Link>
             ))}
-            <Link
-              to="/merch/products?combo=true"
-              className="rounded-full border-2 border-ink bg-accent px-5 py-2 font-body text-sm font-bold text-ink shadow-brutal-sm"
-            >
-              Combos
-            </Link>
           </div>
         </section>
       )}
